@@ -23,9 +23,9 @@ class ScraperService {
         return gifUrl
     }
 
-    fun getUrls(): List<String>{
+    fun getUrls(getThisMany: Int): List<String>{
         var gifUrls = mutableListOf<String>()
-        for (i in 1..5) {
+        for (i in 1..getThisMany) {
             gifUrls.add(getPage())
         }
         return gifUrls
