@@ -1,1 +1,2 @@
-gradlew vaadinCompile; web java -Dserver.port=$PORT $JAVA_OPTS -jar build/libs/*.jar
+release: gradlew vaadinCompile
+web: java -Dserver.port=$PORT $JAVA_OPTS -jar build/libs/*.jar
