@@ -65,3 +65,5 @@ dependencyManagement {
 		mavenBom "com.vaadin:vaadin-bom:${vaadinVersion}"
 	}
 }
+
+task stage(dependsOn: ['vaadinCompile'])
