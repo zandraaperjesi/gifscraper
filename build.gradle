@@ -66,4 +66,5 @@ dependencyManagement {
 	}
 }
 
-task stage(dependsOn: ['vaadinCompile'])
+task stage(dependsOn: ['vaadinCompile', 'build'])
+build.mustRunAfter vaadinCompile

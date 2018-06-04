@@ -1,1 +1,0 @@
-web: java -jar target/gif_scraper-0.0.1-SNAPSHOT-classpath.jar
