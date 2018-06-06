@@ -63,6 +63,7 @@ dependencyManagement {
 }
 
 jar {
+    enabled = true
     manifest {
         attributes 'Main-Class' : 'com.zandraa.giflandinfinite.gif.scraper.GifScraperApplication'
     }
