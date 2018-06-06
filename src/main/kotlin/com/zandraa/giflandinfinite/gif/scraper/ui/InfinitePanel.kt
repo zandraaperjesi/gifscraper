@@ -4,7 +4,6 @@ import com.vaadin.server.ExternalResource
 import com.vaadin.ui.Image
 import com.vaadin.ui.VerticalLayout
 import com.zandraa.giflandinfinite.gif.scraper.service.ScraperService
-import org.vaadin.addons.scrollablepanel.ScrollablePanel
 
 
 class InfinitePanel(val scraper: ScraperService): ScrollablePanel() {
