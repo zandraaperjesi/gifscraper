@@ -5,9 +5,6 @@ buildscript {
 	}
 	repositories {
 		mavenCentral()
-		maven {
-			url "https://plugins.gradle.org/m2/"
-		}
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -18,19 +15,21 @@ buildscript {
 
 apply plugin: 'kotlin'
 apply plugin: 'kotlin-spring'
-apply plugin: 'application'
+apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
-mainClassName = 'com.zandraa.giflandinfinite.gif.scraper.GifScraperApplication'
 version = '1.0.0'
+group = 'com.zandraa'
 sourceCompatibility = 1.8
+
 compileKotlin {
-	kotlinOptions {
-		freeCompilerArgs = ["-Xjsr305=strict"]
-		jvmTarget = "1.8"
-	}
+    kotlinOptions {
+        freeCompilerArgs = ["-Xjsr305=strict"]
+        jvmTarget = "1.8"
+    }
 }
+
 compileTestKotlin {
 	kotlinOptions {
 		freeCompilerArgs = ["-Xjsr305=strict"]
@@ -54,7 +53,6 @@ dependencies {
 	compile('com.vaadin:vaadin-spring-boot-starter')
     compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     compile("org.jetbrains.kotlin:kotlin-reflect")
-    compileOnly('com.vaadin:vaadin-client-compiler:8.4.0')
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
@@ -62,11 +60,4 @@ dependencyManagement {
 	imports {
 		mavenBom "com.vaadin:vaadin-bom:${vaadinVersion}"
 	}
-}
-
-jar {
-    enabled = true
-    manifest {
-        attributes 'Main-Class' : 'com.zandraa.giflandinfinite.gif.scraper.GifScraperApplication'
-    }
 }
